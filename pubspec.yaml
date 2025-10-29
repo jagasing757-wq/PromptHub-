@@ -1,0 +1,16 @@
+name: prompthub
+description: A simple PromptHub app (Android + Web)
+publish_to: 'none' # not publishing to pub.dev
+
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.0.15
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
