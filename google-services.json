@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339443221729",
+    "project_id": "prompthub-69839",
+    "storage_bucket": "prompthub-69839.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339443221729:android:9c9c5fb6fd2c3169c823a0",
+        "android_client_info": {
+          "package_name": "com.example.prompthub_online"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGyWVlneDz-jnLlYIhqUd2Ew0ydDeTDGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

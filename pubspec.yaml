@@ -1,14 +1,15 @@
-name: prompthub
-description: A simple PromptHub app (Android + Web)
-publish_to: 'none' # not publishing to pub.dev
+name: prompthub_online
+description: PromptHub online - uses Firebase Firestore
+publish_to: 'none'
 
 environment:
-  sdk: '>=2.17.0 <3.0.0'
+  sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.0.15
+  firebase_core: ^2.15.0
+  cloud_firestore: ^4.9.0
 
 flutter:
   uses-material-design: true

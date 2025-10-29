@@ -1,26 +1,37 @@
-# PromptHub
+# PromptHub (Online)
 
-PromptHub - simple Prompt Collection app for AI image prompts.
+This repository is a Flutter app that shows AI image prompts with image preview and stores prompts online in Firebase Firestore.
 
-## What's included
-- Flutter app (lib/main.dart)
-- pubspec.yaml with required dependency
-- GitHub Actions workflow to build signed APK automatically (requires keystore secrets)
-- Simple placeholder app icon in `assets/`
+## What you need to do (Firebase setup)
+1. Create a Firebase project: https://console.firebase.google.com/
+2. Add an Android app in Firebase (package name can be `com.example.prompthub_online`).
+3. Download `google-services.json` and place it at `android/app/google-services.json` in this project.
+4. Enable Firestore in Firebase console (create database in test mode initially).
+5. If using Android, add the Firebase Android plugins as per FlutterFire docs. (See notes below.)
 
-## How to use
-1. Create a GitHub repository and upload these files (or push via git).
-2. Add Secrets in Settings → Secrets → Actions:
-   - KEYSTORE_BASE64 : base64 content of your `.jks` file
-   - KEYSTORE_PASSWORD
-   - KEY_ALIAS
-   - KEY_PASSWORD
-3. Push to `main` branch. GitHub Actions will build the signed APK and create a Release with the APK.
-4. Download the APK from Releases and install on your Android phone.
+## Notes
+- This repo currently contains only Flutter Dart code (lib/) and pubspec.yaml.
+- To build an Android APK in GitHub Actions you need full Android folders. If you want Actions to build directly, run `flutter create .` locally (on PC) to generate android/ and ios/ folders, then push the full project to GitHub.
+- Alternatively, I can prepare a full Flutter project including Android folders, but that increases ZIP size. Tell me if you want the full ready-to-build project.
+
+## How the app works
+- Prompts are stored in Firestore collection `prompts`. Document fields:
+  - `prompt` (string)
+  - `imageUrl` (string)
+  - `createdAt` (timestamp)
+
+- Open the app, it lists prompts from Firestore. Toggle Admin mode (top-right lock icon) to add/delete prompts.
+
+## Building locally
+1. Ensure Flutter SDK is installed.
+2. Place `google-services.json` (Android) into `android/app/`.
+3. Run:
+   ```
+   flutter pub get
+   flutter run -d chrome   # or flutter run -d android
+   ```
 
 If you want, I can also:
-- Add password-protected Admin mode
-- Connect to Firebase for cloud sync
-- Create Play Store listing draft
+- Add instructions to connect to Firebase automatically.
+- Create the full Android project and upload the ready ZIP for direct GitHub Actions build.
 
-Tell me which next step you want and I'll do it.
